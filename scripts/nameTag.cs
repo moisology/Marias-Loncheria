@@ -27,7 +27,7 @@ public class nameTag : MonoBehaviour
     void lookAtPoint(Transform target)
     {
         Vector3 relativePos = target.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(relativePos, new Vector3(0, 1, 0));
+        Quaternion rotation = Quaternion.LookRotation(relativePos - new Vector3(0,0,0.001f), new Vector3(0, 1, 0));
         transform.rotation = rotation * Quaternion.Euler(0, 90, 0);
     }
 
